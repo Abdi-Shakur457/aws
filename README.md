@@ -152,6 +152,22 @@ Each EC2 instance installs Apache during launch:
 The second instance uses similar code but serves different content.
 
 
+The bastion host was deployed in Availability Zone B (AZ B) within the public subnet. Its primary role was to serve as a secure access point for my private EC2 instances:
+
+EC2 Instance 1: Located in Private Subnet A in Availability Zone A (AZ A).
+EC2 Instance 2: Located in Private Subnet B in Availability Zone B (AZ B).
+This configuration allowed for secure access to private instances without exposing them directly to the internet. The bastion host effectively controlled and monitored SSH access, enhancing the overall security posture of the architecture.
+
+
+Security Group:
+The bastion host's security group was configured to allow SSH traffic solely from my IP address, which further fortified security by limiting access.
+
+
+Unfortunately, I mistakenly forgot to take screenshots or detailed documentation of the working bastion host before terminating my instances and deleting my VPC. However, I understand its critical role in the architecture and will ensure to improve my documentation practices in future projects.
+
+
+
+
 🎯 Key Concepts Demonstrated
 
 High availability using multiple Availability Zones
